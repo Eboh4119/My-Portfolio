@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
+
 export default function Home() {
   return (
       <div className="bg-black h-[200vh]">
@@ -10,11 +11,11 @@ export default function Home() {
           </a>
 
         {/* inputing menu bar for screensize */}
-        <button>
+       
        <i className="fa fa-bars" id="menu-icon"></i>
-       </button>
+       
 
-          <nav className="navbar flex">
+          <nav className="navbar flex" id="navbar-links">
             <a href="home" className="active">Home</a>
             <a href="education">Education</a>
             <a href="services">Services</a>
@@ -25,9 +26,9 @@ export default function Home() {
 
         <section className="home" id="home">
           <div className="home-content">
-              <h1>Hi, Its <span>Benjamin</span>
-              </h1>
-              <h3 className="text-animation">I'm a <span></span></h3>
+              <h1>Hi, It&apos;s <span>Benjamin</span></h1>
+
+              <h3 className="text-animation">I&apos;m a <span></span></h3>
               <p> 
                A passionate front-end developer with expertise in building modern, responsive web applications using Next.js, React, and other cutting-edge technologies, ensuring performance optimization, seamless user experiences, and accessibility.
               </p>
@@ -154,7 +155,8 @@ export default function Home() {
                 <i className="fa fa-star" id="stars"></i>
                 <i className="fa fa-star" id="stars"></i>
                 </div>
-                <p>Produced my first website with so much good designs and a better responsive design, he is good at his work. </p> 
+                <p>Produced my first website with so much good designs and a better responsive design, he&apos;s good at his work.</p>
+
               </div>
 
               <div className="testimonial-item">
@@ -167,7 +169,7 @@ export default function Home() {
                 <i className="fa fa-star" id="stars"></i>
                 <i className="fa fa-star" id="stars"></i>
                 </div>
-                <p>Produced my first website with so much good designs and a better responsive design, he is good at his work. </p>
+                <p>Produced my first website with so much good designs and a better responsive design, he&apos;s good at his work.</p>
               </div>
 
               <div className="testimonial-item">
@@ -180,7 +182,7 @@ export default function Home() {
                 <i className="fa fa-star" id="stars"></i>
                 <i className="fa fa-star" id="stars"></i>
                 </div>
-                <p>Produced my first website with so much good designs and a better responsive design, he is good at his work. </p>
+                <p>Produced my first website with so much good designs and a better responsive design, he&apos;s good at his work.</p>
               </div>
             </div>
           </div>
