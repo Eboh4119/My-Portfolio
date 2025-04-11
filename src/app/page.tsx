@@ -5,7 +5,7 @@ import Header from "./Components/Header"
 import SideNav from "./Components/SideNav"
 import Splash from "./Components/Splash"
 
-function page () {
+function Page () {
 
     const [isReady, setIsReady] = useState(false)
 
@@ -22,4 +22,4 @@ function page () {
     </div> : <Splash /> 
 }
 
-export default page
+export default Page
