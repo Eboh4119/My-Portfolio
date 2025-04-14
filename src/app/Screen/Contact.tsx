@@ -23,7 +23,7 @@ export default function Contact () {
 
     return(
         <div className="pt-16 media">
-                <form action="" method="post" onSubmit={handleSubmit} className="py-9 px-6 grid justify-center items-center gap-5 text-white">
+                <form action="" method="post" onSubmit={handleSubmit} className="py-14 px-6 grid justify-center items-center gap-5 text-white max-sm:px-1">
                 <div className="mx-auto">
                     <input type="text"
                     placeholder="Enter Name"

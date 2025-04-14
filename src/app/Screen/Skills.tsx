@@ -14,7 +14,7 @@ export default function Skill () {
                         width={60}
                         height={60}
                         />
-                        <h3 className="font-semibold text-xl pt-2">{skill.tag}</h3>
+                        <h3 className="font-semibold text-xl pt-2 max-sm:text-md">{skill.tag}</h3>
                     </div>
                 ))}
             </div>

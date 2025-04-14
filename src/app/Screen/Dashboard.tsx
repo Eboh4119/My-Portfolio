@@ -6,9 +6,9 @@ export default function Dashboard () {
     return (
         <div className="text-white py-8 my-12 flex  items-center justify-between px-6 max-sm:block">
             <div className="py-7">
-                <h1 className="text-6xl font-semibold py-2  dash-text">Hi, <span>👋</span> It&apos;s <span className="text-violet-400">Benjamin</span></h1>
+                <h1 className="text-6xl font-semibold py-2 max-sm:text-3xl dash-text">Hi, <span>👋</span> It&apos;s <span className="text-violet-400">Benjamin</span></h1>
                 <h3 className="text-animation py-2 dash-text">I&apos;m a <span></span></h3>
-                <p className="max-w-[500px] py-2 font-medium text-xl leading-6 dash-text"> 
+                <p className="max-w-[500px] py-2 font-medium text-xl leading-6 dash-text max-sm:text-[15px]"> 
                 {dashContent} 
                 </p>
 

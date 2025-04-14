@@ -29,7 +29,7 @@ const Splash = () => {
       </div>
         {SplashData.map((item, index) => (
             <ul key={index}>
-                <li className='welcome-text text-[3rem] font-bold'>{item.tagOne}</li>
+                <li className='welcome-text text-[3rem] max-sm:text-[2rem] font-bold'>{item.tagOne}</li>
                 <li className='sub-text font-semibold'>{item.tagTwo}</li>
                 <li className='tagline font-medium'>{item.tagThree}</li>
                 <li className='tagline'>{item.tagFour}</li>
