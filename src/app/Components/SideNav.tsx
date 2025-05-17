@@ -19,6 +19,7 @@ function SideNav() {
 
     const [IsActive, setIsActive] = useState<MenuItem | null>(null);
     const [SelectedMenu, setSelectedMenu] = useState<MenuItem | null>(null);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false)
     const [menuItems, setmenuItems] = useState<MenuItem[]>([
         {
           id: 1,
@@ -53,50 +54,95 @@ function SideNav() {
         
       ]);
 
-      useEffect(() => {
-        if (menuItems.length > 0) {
-          setSelectedMenu(menuItems[0]);
-        }
-      }, [menuItems]);
-    
-      const HandleMenuClick = (menu: React.SetStateAction<MenuItem | null>) => {
-        setSelectedMenu(menu);
-        setIsActive(menu);
-      };
-    
+     useEffect(() => {
+    if (menuItems.length > 0) {
+      setSelectedMenu(menuItems[0]);
+      setIsActive(menuItems[0]);
+    }
+  }, [menuItems]);
 
-    return (
-        <div className="flex max-sm:gap-16">
-        <div className={`flex inset-0 mt-14 z-40 md:relative max-md:top-40 md:w-[200px]  md:h-full md:block`}>
-          <div className="fixed h-full">
-          <nav className="w-full h-full justify-center text-white1">
-            <ul className="mt-6">
-              {menuItems.map((menu) => (
-                <li key={menu.id}>
-                  <button
-                    className={`${IsActive?.id === menu.id ? 'bg-violet-700 text-white rounded hover:scale-10' : "'bg-violet-950"} flex gap-2 items-center font-semibold py-2 px-2 ml-2 mb-10`}
-                    onClick={() => HandleMenuClick(menu)}
-                  >
-                    <Image
-                      src={menu.image}
-                      alt={menu.name}
-                      height={20}
-                      width={20}
-                    />
-                    <span className="hidden md:inline  text-white">{menu.name}</span>
-                    </button> 
-                    </li> 
-                    ))} 
-                </ul> 
-            </nav> 
-            </div>
-          </div>
+  const handleMenuClick = (menu: MenuItem) => {
+    setSelectedMenu(menu);
+    setIsActive(menu);
+    setIsSidebarOpen(false); // Close sidebar on menu item click in mobile view
+  };
 
-          <main className="flex-1 p-4 w-full h-full bg-slate-950">
-              {SelectedMenu?.content}
-          </main>
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  return (
+    <div className="flex min-h-screen">
+      {/* Hamburger Menu for Mobile */}
+      <button
+        className="md:hidden fixed top-4 left-4 z-50 p-2 bg-purple2 text-white rounded-md"
+        onClick={toggleSidebar}
+      >
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+
+      {/* Sidebar */}
+      <div
+        className={`fixed inset-y-0 left-0 z-40 w-64 bg-stone-800 transform ${
+          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+        } md:translate-x-0 md:static md:w-64 transition-transform duration-300 ease-in-out flex flex-col mx-auto `}
+      >
+        <div className="py-4 px-4">
         </div>
-    )
+        <nav className="flex-1 text-white1">
+          <ul className="py-8 px-4">
+            {menuItems.map((menu) => (
+              <li key={menu.id}>
+                <button
+                  className={`flex gap-2 items-center w-full text-sm font-semibold py-4 px-3 mb-3 rounded ${
+                    IsActive?.id === menu.id
+                      ? "bg-purple-700 text-purple2"
+                      : "hover:bg-purple-700"
+                  }`}
+                  onClick={() => handleMenuClick(menu)}
+                >
+                  <Image
+                    src={menu.image}
+                    alt={menu.name}
+                    height={20}
+                    width={20}
+                  />
+                  <span>{menu.name}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+
+      {/* Overlay for mobile when sidebar is open */}
+      {isSidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black opacity-50 z-30 md:hidden"
+          onClick={toggleSidebar}
+        ></div>
+      )}
+
+      {/* Main Content */}
+      <main className="flex-1 p-4 w-full">
+        {SelectedMenu?.content}
+      </main>
+    </div>
+  );
 }
+
 
 export default SideNav

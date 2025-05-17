@@ -9,7 +9,7 @@ function Header() {
     return (
         <>
             {/* Header Section */}
-            <div className="flex justify-end px-6 py-4 items-center bg-slate-900 fixed w-[100%] z-20">
+            <div className="flex justify-end px-6 py-4 items-center bg-stone-800 fixed w-[100%] z-20">
                 <div className="flex items-center gap-4 tagleft">
                     <h1 className="text-white text-2xl font-bold">Portfolio</h1>
                     

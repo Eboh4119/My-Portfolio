@@ -37,6 +37,7 @@
 }
 .text-animation span::after{
   content: "";
+  opacity: 0;
   background-color: #020617;
   position: absolute;
   width: calc(100% + 8px);
@@ -101,7 +102,6 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #01121d;
   color: white;
   text-align: center;
   transition: opacity 1s ease-in-out;
@@ -109,7 +109,7 @@
 }
 
 .welcome-image {
-  width: 200px; /* Adjust the size as needed */
+  width: 200px;
   height: auto;
   margin-bottom: 20px;
   animation: fade-in-image 1s forwards;

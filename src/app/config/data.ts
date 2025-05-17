@@ -16,23 +16,23 @@ export const MeData = `As a frontend developer for both web and mobile app, i'm 
 export const SocialMedia = [
     {
         image : '/facebook.svg',
-        link: 'http://facebook.com'
+        link: 'https://www.facebook.com//favour.benjamin.1401'
     },
     {
         image : '/github.svg',
-        link: 'http://facebook.com'
+        link: 'https://github.com/Eboh4119'
     },
     {
         image : '/linkedin.svg',
-        link: 'http://facebook.com'
+        link: 'https://www.linkedin.com/in/benjamin-eboh-5502622b5'
     },
     {
         image : '/instagram.svg',
-        link: 'http://facebook.com'
+        link: 'https://www.instagram.com/benjamin.eboh?isgh=YzljYTk1ODg3Zg=='
     },
     {
         image : '/twitter.svg',
-        link: 'http://facebook.com'
+        link: 'https://x.com/Eboh4119?t=qh8kmtXnB3oMoaDxzkNhQ&s=08'
     },
 ]
 
@@ -106,7 +106,7 @@ export const ProjectData = [
         git: '/github.svg',
         repo_link: 'http://repo.com',
         link_image: '/microsoft-project.svg',
-        link: 'http://project.com'
+        link: 'https://sales-dashboard-opal.vercel.app'
     },
     {
         image: '/reeplay.png',
@@ -115,7 +115,7 @@ export const ProjectData = [
         git: '/github.svg',
         repo_link: 'http://repo.com',
         link_image: '/microsoft-project.svg',
-        link: 'http://project.com'
+        link: 'https://reeplay-page-gvq3.vercel.app'
     },
     {
         image: '/sharo.png',
@@ -124,6 +124,6 @@ export const ProjectData = [
         git: '/github.svg',
         repo_link: 'http://repo.com',
         link_image: '/microsoft-project.svg',
-        link: 'http://project.com'
+        link: 'https://sales-dashboard-opal.vercel.app'
     },
 ]
