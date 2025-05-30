@@ -82,47 +82,47 @@ export const SkillsData = [
 
 export const ProjectData = [
     {
-        image: '/adventure.png',
-        tag: 'Nubspace Adventure',
-        project : 'Landing Page',
+        image: '/ecommerce.png',
+        tag: 'Order.Uk',
+        project : 'Ecommerce Web App',
         git: '/github.svg',
-        repo_link: 'http://repo.com',
+        repo_link: 'https://github.com/Eboh4119/delivery.git',
         link_image: '/microsoft-project.svg',
-        link: 'http://project.com'
+        link: 'https://orderuk-wheat.vercel.app/'
     },
-    {
-        image: '/bentech.png',
-        tag: 'Educational Tech',
-        project : 'Landing Page',
-        git: '/github.svg',
-        repo_link: 'http://repo.com',
-        link_image: '/microsoft-project.svg',
-        link: 'http://project.com'
-    },
-    {
-        image: '/sharo.png',
-        tag: 'Sales Management',
-        project : 'Dashboard',
-        git: '/github.svg',
-        repo_link: 'http://repo.com',
-        link_image: '/microsoft-project.svg',
-        link: 'https://sales-dashboard-opal.vercel.app'
-    },
-    {
+     {
         image: '/reeplay.png',
         tag: 'Reeplay',
         project : 'Landing Page',
         git: '/github.svg',
-        repo_link: 'http://repo.com',
+        repo_link: 'https://github.com/Eboh4119/Reeplay-Page.git',
         link_image: '/microsoft-project.svg',
         link: 'https://reeplay-page-gvq3.vercel.app'
+    },
+    {
+        image: '/dashboard.png',
+        tag: 'MentlyFest',
+        project : 'Dashboard',
+        git: '/github.svg',
+        repo_link: 'https://github.com/Eboh4119',
+        link_image: '/microsoft-project.svg',
+        link: 'https://github.com/Eboh4119'
+    },
+    {
+        image: '/adventure.png',
+        tag: 'Nubspace Adventure',
+        project : 'Landing Page',
+        git: '/github.svg',
+        repo_link: 'https://github.com/Eboh4119/Project.git',
+        link_image: '/microsoft-project.svg',
+        link: 'https://project-seven-phi-25.vercel.app/'
     },
     {
         image: '/sharo.png',
         tag: 'Sales Management',
         project : 'Dashboard',
         git: '/github.svg',
-        repo_link: 'http://repo.com',
+        repo_link: 'https://github.com/Eboh4119/sales-dashboard.git',
         link_image: '/microsoft-project.svg',
         link: 'https://sales-dashboard-opal.vercel.app'
     },

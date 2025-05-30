@@ -37,8 +37,7 @@
 }
 .text-animation span::after{
   content: "";
-  opacity: 0;
-  background-color: #020617;
+  background-color: #02061733;
   position: absolute;
   width: calc(100% + 8px);
   height: 117%;
