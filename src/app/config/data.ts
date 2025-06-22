@@ -90,15 +90,15 @@ export const ProjectData = [
         link_image: '/microsoft-project.svg',
         link: 'https://orderuk-wheat.vercel.app/'
     },
-     {
-        image: '/reeplay.png',
-        tag: 'Reeplay',
-        project : 'Landing Page',
-        git: '/github.svg',
-        repo_link: 'https://github.com/Eboh4119/Reeplay-Page.git',
-        link_image: '/microsoft-project.svg',
-        link: 'https://reeplay-page-gvq3.vercel.app'
-    },
+    //  {
+    //     image: '/reeplay.png',
+    //     tag: 'Reeplay',
+    //     project : 'Landing Page',
+    //     git: '/github.svg',
+    //     repo_link: 'https://github.com/Eboh4119/Reeplay-Page.git',
+    //     link_image: '/microsoft-project.svg',
+    //     link: 'https://reeplay-page-gvq3.vercel.app'
+    // },
     {
         image: '/dashboard.png',
         tag: 'MentlyFest',
