@@ -16,7 +16,7 @@ export default function Dashboard() {
             </h1>
 
             <h3 className="text-animation text-4xl lg:text-5xl font-semibold text-white mt-4 dash-text">
-              I&apos;m a <span className="text-violet-400"></span>
+              I&apos;m a <span className="text-violet-400">Frontend Developer</span>
             </h3>
           </div>
 
@@ -47,13 +47,11 @@ export default function Dashboard() {
           </div>
         </div>
 
-        {/* Right Side - Profile Image */}
+        {/* Profile Image */}
         <div className="flex-shrink-0 relative">
           <div className="relative">
-            {/* Glow Effect */}
             <div className="absolute -inset-8 bg-gradient-to-br from-violet-500 via-fuchsia-500 to-pink-500 rounded-full blur-3xl opacity-30"></div>
 
-            {/* Image Container */}
             <div className="relative border-4 border-violet-500/40 rounded-full p-3 bg-stone-900">
               <Image
                 src="/Eboh.jpg"
