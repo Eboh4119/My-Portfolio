@@ -59,7 +59,7 @@ export default function Contact() {
             Get In <span className="text-violet-400">Touch</span>
           </h1>
           <p className="text-gray-400 text-lg">
-            Have a project in mind? Let's talk.
+            Have a project in mind? Lets talk.
           </p>
         </div>
 
