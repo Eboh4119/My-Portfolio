@@ -16,7 +16,7 @@ export default function Dashboard() {
             </h1>
 
             <h3 className="text-animation text-4xl lg:text-5xl font-semibold text-white mt-4 dash-text">
-              I&apos;m a <span className="text-violet-400">Frontend Developer</span>
+            <span className="text-violet-400"></span>
             </h3>
           </div>
 
