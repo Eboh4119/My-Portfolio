@@ -2,19 +2,22 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useState } from "react"
 
 function Header() {
-    const [Sidebar, setIsSidebar] = useState(false)
     return (
         <>
             {/* Header Section */}
-            <div className="flex justify-end px-6 py-4 items-center bg-stone-800 fixed w-[100%] z-20">
+            <div className="flex justify-end px-6 py-4 items-center 
+                           bg-gradient-to-r from-stone-900 via-stone-800 to-stone-900 
+                           border-b border-violet-700/30 
+                           backdrop-blur-md 
+                           fixed w-full z-20 shadow-lg">
+                
                 <div className="flex items-center gap-4 tagleft">
                     <h1 className="text-white text-2xl font-bold">Portfolio</h1>
                     
                     <div className="border-2 border-violet-700 rounded-[300px]">
-                        <Link href={'git/.com'}>
+                        <Link href={'https://github.com/Eboh4119'}>
                             <Image
                                 src={'github.svg'}
                                 alt="git"

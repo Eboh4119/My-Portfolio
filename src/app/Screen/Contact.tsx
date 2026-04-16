@@ -1,67 +1,150 @@
-import { useEffect, useState } from "react"
+"use client";
 
-export default function Contact () {
+import { useState } from "react";
 
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [phoneNumber, setPhoneNumber] = useState('')
-    const [message, setMessage] = useState('')
-    const [error, setError] = useState('')
-    const [success, setSuccess] = useState('');
+export default function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault()
-        if (emailRegex.test(email)) {
-           setSuccess('Sent Successfully')
-           setError('')
-        }else if (!emailRegex.test(email) && email === "") {
-            setError('This email is not valid')
-        }
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setError("");
+    setSuccess("");
+
+    if (!email) {
+      setError("Email is required");
+      return;
+    }
+    if (!emailRegex.test(email)) {
+      setError("Please enter a valid email address");
+      return;
+    }
+    if (!name.trim()) {
+      setError("Name is required");
+      return;
+    }
+    if (!message.trim()) {
+      setError("Message is required");
+      return;
     }
 
-    return(
-        <div className="pt-16 media">
-                <form action="" method="post" onSubmit={handleSubmit} className="py-14 px-6 grid justify-center items-center gap-5 text-white max-sm:px-1">
-                <div className="mx-auto">
-                    <input type="text"
-                    placeholder="Enter Name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className="inputs"/>
-                </div>
+    setIsSubmitting(true);
 
-                <div className="mx-auto">
-                    <input type="text" 
-                    placeholder="Enter PhoneNumber"
-                    value={phoneNumber}
-                    onChange={(e) => setPhoneNumber(e.target.value)}
-                    className="inputs"/>
-                </div>
+    // Simulate sending (replace with real backend later)
+    setTimeout(() => {
+      setSuccess("Message sent successfully! I'll get back to you soon.");
+      setError("");
+      setIsSubmitting(false);
 
-                <div className="mx-auto">
-                    <input type="text" 
-                    placeholder="Enter Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="inputs"/>
-                    {error && <div className="text-red-700 font-medium">{error}</div>}
-                </div>
+      // Clear form after success
+      setName("");
+      setEmail("");
+      setPhoneNumber("");
+      setMessage("");
+    }, 1500);
+  };
 
-                <div>
-                    <textarea className="inputs w-[500px] h-[200px] max-sm:w-[300px]"
-                     placeholder="Enter Message"
-                     value={message}
-                     onChange={(e) => setMessage(e.target.value)}
-                     ></textarea>
-                </div>
-                
-                <button className="bg-violet-700 py-3 px-3 font-bold rounded">Submit</button>
-
-                {/* success message */}
-                {success && <div className="bg-white py-6 px-6 mb-72 ml-30 absolute text-4xl text-green-500 text-center sent-text items-center font-bold rounded">{success}</div>}
-                </form>
+  return (
+    <div className="min-h-screen py-20 px-6 bg-stone-950 flex items-center">
+      <div className="max-w-2xl mx-auto w-full">
+        <div className="text-center mb-12">
+          <h1 className="text-5xl font-bold tracking-tight text-white mb-4">
+            Get In <span className="text-violet-400">Touch</span>
+          </h1>
+          <p className="text-gray-400 text-lg">
+            Have a project in mind? Let's talk.
+          </p>
         </div>
-    )
+
+        <form
+          onSubmit={handleSubmit}
+          className="bg-stone-900/70 backdrop-blur-xl border border-violet-700/30 rounded-3xl p-10 shadow-2xl space-y-8"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Name */}
+            <div>
+              <label className="block text-sm text-gray-400 mb-2">Your Name</label>
+              <input
+                type="text"
+                placeholder="Benjamin Eboh"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="inputs w-full"
+                required
+              />
+            </div>
+
+            {/* Phone */}
+            <div>
+              <label className="block text-sm text-gray-400 mb-2">Phone Number</label>
+              <input
+                type="tel"
+                placeholder="+234 000 000 0000"
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+                className="inputs w-full"
+              />
+            </div>
+          </div>
+
+          {/* Email */}
+          <div>
+            <label className="block text-sm text-gray-400 mb-2">Email Address</label>
+            <input
+              type="email"
+              placeholder="your@email.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="inputs w-full"
+              required
+            />
+            {error && <p className="mt-2 text-red-500 text-sm font-medium">{error}</p>}
+          </div>
+
+          {/* Message */}
+          <div>
+            <label className="block text-sm text-gray-400 mb-2">Your Message</label>
+            <textarea
+              placeholder="Tell me about your project..."
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              rows={7}
+              className="inputs w-full resize-y min-h-[160px]"
+              required
+            ></textarea>
+          </div>
+
+          {/* Submit Button */}
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full bg-violet-600 hover:bg-violet-700 disabled:bg-violet-800 transition-all py-4 rounded-2xl font-semibold text-lg flex items-center justify-center gap-3 disabled:cursor-not-allowed"
+          >
+            {isSubmitting ? (
+              <>
+                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                Sending...
+              </>
+            ) : (
+              "Send Message"
+            )}
+          </button>
+        </form>
+
+        {/* Success Message */}
+        {success && (
+          <div className="mt-8 bg-green-900/80 border border-green-500 text-green-300 px-8 py-6 rounded-2xl text-center text-lg font-medium animate-fade-in">
+            {success}
+          </div>
+        )}
+      </div>
+    </div>
+  );
 }

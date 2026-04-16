@@ -77,10 +77,58 @@ export const SkillsData = [
         image : '/file-type-typescript-official.svg',
         tag: 'Typescript'
     },
+    {
+        image : '/MongoDB.png',
+        tag: 'MongoDB'
+    },
+    {
+        image : '/Express.png',
+        tag: 'Express'
+    },
+    {
+        image : '/Node.js.png',
+        tag: 'Node.js'
+    },
     
 ]
 
 export const ProjectData = [
+    
+    {
+        image: '/health.png',
+        tag: 'MyHealthIntegral',
+        project : 'Health Web App',
+        git: '/github.svg',
+        repo_link: 'https://github.com/Eboh4119',
+        link_image: '/microsoft-project.svg',
+        link: 'https://myhealthintegral.com/'
+    },{
+        image: '/bejite.png',
+        tag: 'Bejite',
+        project : 'Recruitment Web App',
+        git: '/github.svg',
+        repo_link: 'https://github.com/Eboh4119',
+        link_image: '/microsoft-project.svg',
+        link: 'https://www.bejite.com/'
+    },
+    {
+        image: '/virtual.png',
+        tag: 'VirtualHyve',
+        project : 'Recruiter Landing Page',
+        git: '/github.svg',
+        repo_link: 'https://github.com/Eboh4119/virtualhyve',
+        link_image: '/microsoft-project.svg',
+        link: 'https://virtualhyve.vercel.app/'
+    },
+    {
+        image: '/assessment.png',
+        tag: 'Assessment',
+        project : 'Landing Page',
+        git: '/github.svg',
+        repo_link: 'https://github.com/Eboh4119/Assesment',
+        link_image: '/microsoft-project.svg',
+        link: 'https://assesment-xi-bice.vercel.app/'
+    },
     {
         image: '/ecommerce.png',
         tag: 'Order.Uk',

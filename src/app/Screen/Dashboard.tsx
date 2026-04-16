@@ -1,43 +1,72 @@
-import { dashContent, SocialMedia } from "../config/data"
-import Image from "next/image"
-import Link from "next/link"
+import { dashContent, SocialMedia } from "../config/data";
+import Image from "next/image";
+import Link from "next/link";
 
-export default function Dashboard () {
-    return (
-        <div className="text-white py-8 my-12 flex  items-center justify-between px-6 max-sm:block">
-            <div className="py-7">
-                <h1 className="text-6xl font-semibold py-2 max-sm:text-3xl dash-text">Hi, <span>👋</span> It&apos;s <span className="text-violet-400">Benjamin</span></h1>
-                <h3 className="text-animation py-2 dash-text">I&apos;m a <span></span></h3>
-                <p className="max-w-[500px] py-2 font-medium text-xl leading-6 dash-text max-sm:text-[15px]"> 
-                {dashContent} 
-                </p>
+export default function Dashboard() {
+  return (
+    <div className="min-h-screen flex items-center justify-center py-20 px-6 bg-stone-950">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
 
-                <div className="flex mt-6 items-center gap-6 media">
-                    {SocialMedia.map((media, index) => (
-                        <div key={index} className="hover:-translate-y-1.5 ease-in-out ">
-                            <Link href={media.link}>
-                                <Image 
-                                src={media.image}
-                                alt="image"
-                                width={60}
-                                height={60}
-                                className=" py-2 px-2 bg-violet-500 rounded-full hover:bg-blue-800"
-                                />
-                            </Link>
-                        </div>
-                    ))}
+        {/* Left Content */}
+        <div className="flex-1 space-y-8 text-center lg:text-left">
+          <div>
+            <h1 className="text-6xl lg:text-7xl font-bold tracking-tighter leading-none dash-text">
+              Hi, <span className="inline-block">👋</span> It&apos;s{" "}
+              <span className="text-violet-400">Benjamin</span>
+            </h1>
+
+            <h3 className="text-animation text-4xl lg:text-5xl font-semibold text-white mt-4 dash-text">
+              I&apos;m a <span className="text-violet-400"></span>
+            </h3>
+          </div>
+
+          <p className="max-w-lg mx-auto lg:mx-0 text-lg lg:text-xl text-gray-300 leading-relaxed font-light dash-text">
+            {dashContent}
+          </p>
+
+          {/* Social Media Icons */}
+          <div className="flex items-center justify-center lg:justify-start gap-6 pt-6">
+            {SocialMedia.map((media, index) => (
+              <Link
+                key={index}
+                href={media.link}
+                target="_blank"
+                className="group"
+              >
+                <div className="p-4 bg-stone-900 hover:bg-violet-600 border border-violet-700/30 hover:border-violet-500 rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-violet-500/20">
+                  <Image
+                    src={media.image}
+                    alt={media.link || "social"}
+                    width={52}
+                    height={52}
+                    className="transition-transform group-hover:scale-110"
+                  />
                 </div>
-            </div>
-
-            <div className="border-2 border-violet-700 rounded-full">
-                <Image 
-                src={'/Eboh.jpg'}
-                alt="Eboh.png"
-                width={300}
-                height={200}
-                className="rounded-full w-[300px] h-[300px] object-fill dashimage max-sm:w-full"
-                /> 
-            </div>
+              </Link>
+            ))}
+          </div>
         </div>
-    )
+
+        {/* Right Side - Profile Image */}
+        <div className="flex-shrink-0 relative">
+          <div className="relative">
+            {/* Glow Effect */}
+            <div className="absolute -inset-8 bg-gradient-to-br from-violet-500 via-fuchsia-500 to-pink-500 rounded-full blur-3xl opacity-30"></div>
+
+            {/* Image Container */}
+            <div className="relative border-4 border-violet-500/40 rounded-full p-3 bg-stone-900">
+              <Image
+                src="/Eboh.jpg"
+                alt="Eboh Benjamin"
+                width={380}
+                height={380}
+                className="rounded-full object-cover dashimage shadow-2xl"
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }

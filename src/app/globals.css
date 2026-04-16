@@ -2,21 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+.splash-screen {
+  transition: opacity 1000ms ease-in-out;
+}
 
+/* Optional: Add this if you want a slight scale effect */
+.fade-in {
+  animation: splashFadeIn 0.8s ease-out forwards;
+}
+
+@keyframes splashFadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
 #menu-icon{
   font-size: 2rem;
   color: #ad07ad;
 }
 
-.inputs{
-  display: block;
+.inputs {
+  background-color: #1f2937;
+  border: 1px solid #4b5563;
   color: white;
-  font-weight: 800;
-  padding: 10px;
-  border: solid 1px blueviolet;
-  background-color: #01121d;
+  padding: 14px 16px;
+  border-radius: 12px;
+  width: 100%;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.inputs:focus {
   outline: none;
-  font-size: medium;
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
 }
 
 /* text animation */
