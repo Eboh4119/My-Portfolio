@@ -30,8 +30,8 @@ const Splash = () => {
               <Image
                 src="/Eboh.jpg"
                 alt="Eboh Benjamin"
-                width={280}
-                height={280}
+                width={180}
+                height={180}
                 className="rounded-full object-cover"
                 priority
               />

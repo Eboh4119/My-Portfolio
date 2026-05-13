@@ -10,7 +10,7 @@ export default function Dashboard() {
         {/* Left Content */}
         <div className="flex-1 space-y-8 text-center lg:text-left">
           <div>
-            <h1 className="text-6xl lg:text-7xl font-bold tracking-tighter leading-none dash-text">
+            <h1 className="text-6xl lg:text-7xl font-bold tracking-tighter leading-none dash-text text-white">
               Hi, <span className="inline-block">👋</span> It&apos;s{" "}
               <span className="text-violet-400">Benjamin</span>
             </h1>
@@ -33,7 +33,7 @@ export default function Dashboard() {
                 target="_blank"
                 className="group"
               >
-                <div className="p-4 bg-stone-900 hover:bg-violet-600 border border-violet-700/30 hover:border-violet-500 rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-violet-500/20">
+                <div className="p-4 bg-violet-950 hover:bg-violet-600 border border-violet-700/30 hover:border-violet-500 rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-violet-500/20">
                   <Image
                     src={media.image}
                     alt={media.link || "social"}

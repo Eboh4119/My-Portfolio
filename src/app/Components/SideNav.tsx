@@ -92,7 +92,7 @@ function SideNav() {
               <li key={menu.id}>
                 <button
                   onClick={() => handleMenuClick(menu)}
-                  className={`group flex items-center gap-4 w-full py-4 px-5 rounded-2xl transition-all duration-300
+                  className={`group flex items-center gap-4 w-full py-4 px-4 rounded-2xl transition-all duration-300
                     ${IsActive?.id === menu.id 
                       ? "bg-violet-600 text-white shadow-lg shadow-violet-500/30" 
                       : "hover:bg-white/5 text-gray-300 hover:text-white"
